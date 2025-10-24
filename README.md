@@ -1,7 +1,5 @@
 # Fullstack Web Application — Next.js + Hono.js + PostgreSQL
 
-## Objective
-
 This project was built as part of a **Fullstack Development Assessment** to demonstrate the ability to create a simple, modular, and fully functional web application using **Next.js (Frontend)** and **Hono.js (Backend)** — including authentication, CRUD operations, and clean architecture.
 
 ---
