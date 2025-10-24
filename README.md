@@ -21,8 +21,7 @@ It follows a **clean and modular fullstack structure**, with a responsive UI bui
 - **Sign Out** – Securely log out from the current session.  
 
 ### Post Management (CRUD)
-- **List Posts** – Display all posts (with pagination).  
-- **View Post** – Show detailed content for a selected post.  
+- **List Posts** – Display all posts
 - **Create Post** – Add new posts.  
 - **Edit Post** – Update existing posts.  
 - **Delete Post** – Remove a post from the list.  
