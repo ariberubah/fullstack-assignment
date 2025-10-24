@@ -88,21 +88,22 @@ project/
 
 3. Create `.env` file
    ```env
-   DATABASE_URL=postgresql://username:password@localhost:5432/db_name
-   JWT_SECRET=your_secret_key
+   DATABASE_URL=postgresql://postgres:postgres@localhost:5432/impratama
+   JWT_SECRET=supersecret123
+   PORT=8787
    ```
 
 4. Import the database schema
    ```bash
-   createdb fullstack_assignment
-   psql -U postgres -d fullstack_assignment -f fullstack-assignment.sql
+   createdb impratama
+   psql -U postgres -d impratama -f fullstack-assignment.sql
    ```
 
 5. Run the server
    ```bash
    bun run src/index.ts
    ```
-   The backend runs at `http://localhost:3000`
+   The backend runs at `http://localhost:8787`
 
 #### Database Schema
 
