@@ -21,7 +21,8 @@ It follows a **clean and modular fullstack structure**, with a responsive UI bui
 - **Sign Out** – Securely log out from the current session.  
 
 ### Post Management (CRUD)
-- **List Posts** – Display all posts.  
+- **List Posts** – Display all posts (with pagination).  
+- **View Post** – Show detailed content for a selected post.  
 - **Create Post** – Add new posts.  
 - **Edit Post** – Update existing posts.  
 - **Delete Post** – Remove a post from the list.  
@@ -91,11 +92,43 @@ project/
    JWT_SECRET=your_secret_key
    ```
 
-4. Run the server
+4. Import the database schema
+   ```bash
+   createdb fullstack_assignment
+   psql -U postgres -d fullstack_assignment -f fullstack-assignment.sql
+   ```
+
+5. Run the server
    ```bash
    bun run src/index.ts
    ```
    The backend runs at `http://localhost:3000`
+
+#### Database Schema
+
+The SQL dump (`fullstack-assignment.sql`) defines two main tables:
+
+**users**
+| Column | Type | Description |
+|---------|------|-------------|
+| id | integer (PK) | Auto-incremented user ID |
+| name | varchar(100) | User’s name |
+| email | varchar(100), unique | User’s email address |
+| password | varchar(255) | Hashed password |
+| created_at | timestamp | Timestamp of registration |
+
+**posts**
+| Column | Type | Description |
+|---------|------|-------------|
+| id | integer (PK) | Auto-incremented post ID |
+| user_id | integer (FK) | Linked to `users.id` |
+| title | varchar(255) | Post title |
+| content | text | Post content |
+| created_at | timestamp | Timestamp of post creation |
+
+**Relationships**
+- Each post belongs to one user (`user_id → users.id`)
+- When a user is deleted, their posts are also deleted (`ON DELETE CASCADE`)
 
 #### API Endpoints
 
